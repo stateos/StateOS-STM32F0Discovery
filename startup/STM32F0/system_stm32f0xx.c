@@ -34,7 +34,7 @@
 /* -------------------------------------------------------------------------- */
 
 #ifndef __NO_SYSTEM_INIT
-__attribute__ (( weak ))
+__WEAK
 void SystemInit( void )
 {
 	FLASH->ACR = LATENCY | FLASH_ACR_PRFTBE;
@@ -61,10 +61,10 @@ void SystemInit( void )
 /* -------------------------------------------------------------------------- */
 
 #ifndef __NO_SYSTEM_INIT
-__attribute__ (( weak ))
+__WEAK
 uint32_t SystemCoreClock = CPU_FREQ * MHz;
 #else
-__attribute__ (( weak ))
+__WEAK
 uint32_t SystemCoreClock = HSI_FREQ * MHz;
 #endif//__NO_SYSTEM_INIT
 
