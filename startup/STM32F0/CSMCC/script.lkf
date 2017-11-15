@@ -1,8 +1,8 @@
 #***********************************************************
-# file     stm32f4xx.lkf
+# file     stm32f0xx.lkf
 # author   Rajmund Szymanski
 # date     03.11.2017
-# brief    Link command file for STM32F407VG
+# brief    Link command file for STM32F051R8 device with 64KB FLASH and 8KB RAM
 #***********************************************************
 
 # segment vectors:
