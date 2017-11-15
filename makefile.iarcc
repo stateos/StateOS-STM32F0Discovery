@@ -14,7 +14,7 @@ QEMU       := c:/sys/qemu-arm/bin/qemu-system-gnuarmeclipse -semihosting -board 
 #----------------------------------------------------------#
 
 PROJECT    ?= $(notdir $(CURDIR))
-DEFS       ?= __ARM__
+DEFS       ?=
 LIBS       ?=
 DIRS       ?=
 KEYS       ?=
@@ -24,7 +24,7 @@ SCRIPT     ?=
 
 #----------------------------------------------------------#
 
-DEFS       += STM32F051x8
+DEFS       += STM32F051x8 __ARM__
 KEYS       += .iarcc *
 
 #----------------------------------------------------------#
