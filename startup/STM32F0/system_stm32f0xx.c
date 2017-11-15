@@ -1,7 +1,7 @@
 /******************************************************************************
  * @file    system_stm32f0xx.c
  * @author  Rajmund Szymanski
- * @date    03.03.2016
+ * @date    02.11.2017
  * @brief   This file provides set of configuration functions for STM32F0 uC.
  ******************************************************************************/
 
@@ -55,6 +55,15 @@ void SystemInit( void )
 
 	RCC->CFGR |= RCC_CFGR_HPRE_DIV1 | RCC_CFGR_PPRE_DIV1 | RCC_CFGR_SW_PLL;
 	while ((RCC->CFGR & RCC_CFGR_SWS) != RCC_CFGR_SWS_PLL);
+}
+#endif//__NO_SYSTEM_INIT
+
+/* -------------------------------------------------------------------------- */
+
+#ifndef __NO_SYSTEM_INIT
+__WEAK
+void SystemCoreClockUpdate( void )
+{
 }
 #endif//__NO_SYSTEM_INIT
 

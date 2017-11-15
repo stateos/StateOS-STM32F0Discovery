@@ -1,7 +1,7 @@
 /*******************************************************************************
 @file     stm32f0xx.ld
 @author   Rajmund Szymanski
-@date     28.02.2017
+@date     03.11.2017
 @brief    Linker script for STM32F051R8 device with 64KB FLASH and 8KB RAM
 *******************************************************************************/
 
@@ -18,8 +18,6 @@ ENTRY(Reset_Handler)
 
 SECTIONS
 {
-	__text_start = ORIGIN(ROM);
-
 	.text :
 	{
 		KEEP (*(.vectors))
@@ -67,9 +65,6 @@ SECTIONS
 		*(.ARM.exidx* .gnu.linkonce.armexidx.*)
 		__exidx_end = .;
 	} > ROM
-
-	__text_end  = .;
-	__text_size = . - __text_start;
 
 	.main_stack (NOLOAD): ALIGN(8)
 	{
