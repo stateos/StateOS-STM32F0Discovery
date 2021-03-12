@@ -1,15 +1,13 @@
-StateOS [![Build Status](https://travis-ci.org/stateos/StateOS-STM32F0Discovery.svg)](https://travis-ci.org/stateos/StateOS-STM32F0Discovery)
-=======
+# StateOS
+  [![CI](https://github.com/stateos/StateOS-STM32F0Discovery/actions/workflows/test.yml/badge.svg)](https://github.com/stateos/StateOS-STM32F0Discovery/actions/workflows/test.yml)
 
 Free, extremely simple, amazingly tiny and very fast real-time operating system (RTOS) designed for deeply embedded applications.
-TEMPLATE. NOT TESTED!
+TEMPLATE.
 
-Target
--------
+### Target
 
 STM32F0Discovery board.
 
-License
--------
+### License
 
 This project is licensed under the terms of [MIT License (MIT)](https://opensource.org/licenses/MIT).

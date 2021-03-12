@@ -1,0 +1,29 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: checkout repository
+      uses: actions/checkout@v2
+      with:
+        submodules: recursive
+    - name: install dependencies
+      run: |
+        sudo apt-get -y -qq update
+        sudo apt-get -y -qq install cmake ninja-build
+    - name: install arm-none-eabi-gcc
+      uses: fiam/arm-none-eabi-gcc@v1
+      with:
+        release: '10-2020-q4'
+    - name: check arm-none-eabi-gcc version
+      run: arm-none-eabi-gcc -v
+    - name: make test
+      run: |
+        cmake -S. -Bbuild -GNinja
+        cmake --build build -v
